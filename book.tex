@@ -1,0 +1,76 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Main Book File: book.tex
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[10pt, twoside]{memoir}
+
+%-------------------------------------------------------------------
+% PAGE GEOMETRY & LAYOUT
+% Standard US mass market paperback size is 4.25in x 6.87in
+%-------------------------------------------------------------------
+\setstocksize{6.87in}{4.25in} % Height, Width
+\settrimmedsize{\stockheight}{\stockwidth}{*}
+\setlrmarginsandblock{0.5in}{0.75in}{*} % {inner margin}{outer margin}
+\setulmarginsandblock{0.75in}{0.75in}{*} % {upper margin}{lower margin}
+\checkandfixthelayout
+
+%-------------------------------------------------------------------
+% REQUIRED PACKAGES
+%-------------------------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{graphicx}      % For images (e.g., publisher logo)
+\usepackage{lipsum}        % For placeholder text (remove in final version)
+\usepackage{ebgaramond}    % A beautiful, classic book font
+
+%-------------------------------------------------------------------
+% BOOK METADATA (Fill this in)
+%-------------------------------------------------------------------
+\newcommand{\booktitle}{The Name of Your Book}
+\newcommand{\authorname}{Your Name}
+\newcommand{\publisher}{Fictitious Publisher Press}
+\newcommand{\publishercity}{New York}
+\newcommand{\publicationyear}{2025}
+\newcommand{\isbnpaperback}{978-X-XXXX-XXXX-X}
+\newcommand{\isbnebook}{978-X-XXXX-XXXX-Y}
+
+%-------------------------------------------------------------------
+% DOCUMENT START
+%-------------------------------------------------------------------
+\begin{document}
+
+%==================================================================
+% FRONT MATTER
+% Pages with Roman numeral page numbers
+%==================================================================
+\frontmatter
+
+% The very first page is often a half-title page, but for pocket books,
+% it can go straight to the full title.
+\include{frontmatter/01_titlepage}
+\include{frontmatter/02_copyright}
+\include{frontmatter/03_dedication}
+\include{frontmatter/04_alsoby}
+
+
+%==================================================================
+% MAIN MATTER
+% The story itself. Page numbering resets to Arabic (1, 2, 3...)
+%==================================================================
+\mainmatter
+
+\include{chapters/chapter_01}
+\include{chapters/chapter_02}
+% ... add all your other chapter files here
+
+
+%==================================================================
+% BACK MATTER
+% Optional sections after the main story
+%==================================================================
+\backmatter
+
+\include{backmatter/01_acknowledgements}
+\include{backmatter/02_about_author}
+
+\end{document}
